@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lulama Nsizwa Zondo - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="description" content="Lulama Nsizwa Zondo - IT Graduate and Web Developer Portfolio" />
+  <meta name="author" content="Lulama Nsizwa Zondo" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="close-btn" id="close-menu" aria-label="Close menu">&times;</div>
+    <ul>
+      <li><a href="#about" onclick="toggleMenu()">About</a></li>
+      <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+      <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      <li><a href="Lulama N Zondo Resume.pdf" target="_blank" class="resume-btn">Download CV</a></li>r
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero" id="home">
+
+    <nav class="navbar" role="navigation">
+      <ul class="nav-list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="Lulama Zondo Resume.pdf" target="_blank" rel="noopener noreferrer" class="resume-btn">View CV</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Lulama Nsizwa Zondo</h1>
+        <p>IT Graduate - Web Developer</p>
+        <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">Get in Touch</button>
+      </div>
+      <img src="WhatsApp Image 2025-05-11 at 11.00.58_42add85b.jpg" alt="Lulama Zondo" class="hero-img">
+    </div>
+      
+    <div class="overlay"></div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <!-- <img src="WhatsApp Image 2025-05-11 at 11.00.58_42add85b.jpg" alt="Lulama Zondo" class="about-img"> -->
+      <p>
+        Detail-oriented IT graduate with strong skills in web development and a passion for solving real-world problems through technology. Adept in modern tools and collaborative team environments.
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="projects-wrapper">
+      <button class="scroll-btn left"><i class="fa-solid fa-circle-arrow-left"></i></button>
+
+        <div id="projects-item"class="projects-item">
+          <a href="https://nsizwazondo.github.io/LuxRentals-demo/"><img src="Screenshot 2025-05-20 210405.png" alt="Lux Reantals"></a>
+        </div>
+
+      <button class="scroll-btn right"><i class="fa-solid fa-circle-arrow-right"></i></button>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="contact-container">
+      <h2>Contact Me</h2>
+      <p>I'd love to hear from you! Reach out through any of the platforms below:</p>
+      
+      <div class="contact-icons">
+        <div class="contact-icon">
+          <a href="mailto:zondolulama49@gmail.com" aria label="Send Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+
+        <div class="contact-icon">
+          <a href="https://github.com/NsizwaZondo" target="_blank" aria label="GitHub Profile">
+             <i class="fab fa-github"></i>
+          </a>
+        </div>
+
+        <div class="contact-icon">
+          <a href="https://www.linkedin.com/in/lulama-zondo-298190337/" target="_blank" aria label="LinkedIn Profile">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+
+        <div class="contact-icon">
+          <a href="tel:+27630688284" aria label="Call">
+            <i class="fas fa-phone"></i>
+          </a>
+        </div>
+
+        <div class="contact-icon">
+          <a href="https://wa.me/27630688284" target="_blank" aria label="WhatsApp Profile">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+    </div>  
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2025 Lulama Nsizwa Zondo. All rights reserved.
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+

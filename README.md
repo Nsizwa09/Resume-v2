@@ -1,1 +1,2 @@
-# Resume-v2
+# Resume2
+New and improved personal resume website
