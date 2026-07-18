@@ -1,60 +1,53 @@
+// ==========================================
+// 1. Mobile Menu Functionality
+// ==========================================
+const mobileMenu = document.getElementById('mobile-menu');
+const hamburger = document.getElementById('hamburger');
+const closeMenu = document.getElementById('close-menu');
+
 function toggleMenu() {
-  const menu = document.getElementById('mobile-menu');
-  if (!menu) return;
-
-  const isOpen = menu.classList.contains('show');
-
-  if (isOpen) {
-    menu.classList.remove('show');
-  } else {
-    menu.classList.add('show');
-  }
+  mobileMenu.classList.toggle('show');
 }
 
+if (hamburger) hamburger.addEventListener('click', toggleMenu);
+if (closeMenu) closeMenu.addEventListener('click', toggleMenu);
+
+
+// ==========================================
+// 2. Slider / Scroll Functionality
+// ==========================================
+function setupSlider(sectionSelector, itemSelector) {
+  const section = document.querySelector(sectionSelector);
+  if (!section) return;
+
+  const scrollContainer = section.querySelector(itemSelector);
+  const leftBtn = section.querySelector('.scroll-btn.left');
+  const rightBtn = section.querySelector('.scroll-btn.right');
+
+  if (!scrollContainer || !leftBtn || !rightBtn) return;
+
+  // Define how far to scroll on each button click (width of one item + gap)
+  const scrollAmount = 320; 
+
+  // Right Button Click
+  rightBtn.addEventListener('click', () => {
+    scrollContainer.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  });
+
+  // Left Button Click
+  leftBtn.addEventListener('click', () => {
+    scrollContainer.scrollBy({
+      left: -scrollAmount,
+      behavior: 'smooth'
+    });
+  });
+}
+
+// Initialize sliders independently once the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-  const closeMenuButton = document.getElementById('close-menu');
-  if (closeMenuButton) {
-    closeMenuButton.addEventListener('click', () => {
-      const menu = document.getElementById('mobile-menu');
-      if (menu) {
-        menu.classList.remove('show');
-      }
-    });
-  }
-
-  function setupScrollableSection(wrapperSelector, itemSelector) {
-    const wrapper = document.querySelector(wrapperSelector);
-    if (!wrapper) return;
-
-    const scrollContainer = wrapper.querySelector(itemSelector);
-    const scrollLeftBtn = wrapper.querySelector('.scroll-btn.left');
-    const scrollRightBtn = wrapper.querySelector('.scroll-btn.right');
-
-    if (!scrollContainer || !scrollLeftBtn || !scrollRightBtn) return;
-
-    function updateScrollButtons() {
-      const scrollLeft = scrollContainer.scrollLeft;
-      const scrollWidth = scrollContainer.scrollWidth;
-      const containerWidth = scrollContainer.clientWidth;
-
-      scrollLeftBtn.classList.toggle('hidden', scrollLeft <= 0);
-      scrollRightBtn.classList.toggle('hidden', scrollLeft + containerWidth >= scrollWidth - 1);
-    }
-
-    updateScrollButtons();
-    scrollContainer.addEventListener('scroll', updateScrollButtons);
-    window.addEventListener('resize', updateScrollButtons);
-
-    scrollLeftBtn.addEventListener('click', () => {
-      scrollContainer.scrollBy({ left: -300, behavior: 'smooth' });
-    });
-
-    scrollRightBtn.addEventListener('click', () => {
-      scrollContainer.scrollBy({ left: 300, behavior: 'smooth' });
-    });
-  }
-
-  setupScrollableSection('.projects-wrapper', '.projects-item');
-  setupScrollableSection('.certificates-wrapper', '.certificates-item');
+  setupSlider('.projects', '.projects-item');
+  setupSlider('.certificates', '.certificates-item');
 });
-
